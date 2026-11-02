@@ -1,126 +1,159 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--ESTILOS-->
+    <link rel="stylesheet" href="/style/styles.css" />
+    <!--FONTES-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!--ICONS-->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"
+    ></script>
     <title>Agenda Connect Car</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <section id="profile">
-            <div id="profile-img">
-            </div>
-            <div id="profile-name">
-                <h2>Agenda Connect Car</h2>
-                <p>Atendemos em todo o Noroeste do Espirito Santo</p>
-            </div>
-            <button id="profile-status-button">Horário de Funcionamento</button>
-        </section>
-        <section id="contact-info">
-            <div>
-                <a href="#">WhatsApp</a>
-                <a href="#">Instagram</a>
-                <a href="#">Facebook</a>
-            </div>
-            <div>
-                <a href="#"> Agendar</a>
-            </div>
-        </section>
+      <section id="profile">
+        <div id="profile-img-container">
+          <img
+            id="profile-img"
+            src="style/assets/logo.png"
+            alt="Profile Image"
+          />
+        </div>
+        <div id="profile-info">
+          <h1>ConnectCar</h1>
+          <p><ion-icon name="location-outline"></ion-icon> Colatina & Noroeste do
+            Espirito Santo
+          </p>
+          <button id="profile-status-button">Horário de Funcionamento</button>
+        </div>
+      </section>
+      <section id="contact-info">
+        <div>
+          <a href="#"
+            ><ion-icon name="logo-whatsapp" class="social-icons"></ion-icon>
+          </a>
+          <a href="#"
+            ><ion-icon name="logo-instagram" class="social-icons"></ion-icon>
+          </a>
+          <a href="#"
+            ><ion-icon name="logo-facebook" class="social-icons"></ion-icon>
+          </a>
+        </div>
+        <div id="schedule-button">
+          <a href="#" class="schedule">
+            Agendar Horário <ion-icon name="calendar-outline" color="light"></ion-icon>
+          </a>
+        </div>
+      </section>
     </header>
     <main>
-        <section id="services">
-            <div id="services-cards">
-                <div class="service-card">
-                    <img src="service1.jpg" alt="Serviço 1">
-                    <h3>Retoque Fast</h3>
-                    <p>(icone de relógio) 3 horas de duração</p>
-                    <p> (ToDo).</p>
-                </div>
-                <div class="service-card">
-                    <img src="service2.jpg" alt="Serviço 2">
-                    <h3> Retoque Padrão </h3>
-                    <p>(icone de relógio) 2 dias de duração</p>
-                    <p> (ToDo).</p>
-                </div>
-                <div class="service-card">
-                    <img src="service2.jpg" alt="Serviço 2">
-                    <h3>Micropintura</h3>
-                    <p>(icone de relógio) 2 horas de duração</p>
-                    <p> (ToDo).</p>
-                </div>
-                <div class="service-card">
-                    <img src="service3.jpg" alt="Serviço 3">
-                    <h3>Polimento Básico</h3>
-                    <p>(icone de relógio) 2 horas de duração</p>
-                    <p> (ToDo).</p>
-                </div>
-                <div class="service-card">
-                    <img src="service4.jpg" alt="Serviço 4">
-                    <h3>Polimento Intermediário</h3>
-                    <p>(icone de relógio) 4 horas de duração</p>
-                    <p> (ToDo).</p>
-                </div>
-                <div class="service-card">
-                    <img src="service5.jpg" alt="Serviço 5">
-                    <h3>Polimento Detalhado</h3>
-                    <p>(icone de relógio) 2 dias de duração</p>
-                    <p> (ToDo).</p>
-                </div>
-                <div class="service-card">
-                    <img src="service6.jpg" alt="Serviço 6">
-                    <h3>Polimento de Farol</h3>
-                    <p>(icone de relógio) 3 dias de duração</p>
-                    <p> (ToDo).</p>
-                </div>
-            <div class="service-card">
-                    <img src="service7.jpg" alt="Serviço 7">
-                    <h3>Restauração de Farol</h3>
-                    <p>(icone de relógio) 1 dia de duração</p>
-                    <p> (ToDo).</p>
-                </div>
-                <div class="service-card">
-                    <img src="service8.jpg" alt="Serviço 8">
-                    <h3>Limpeza Interna</h3>
-                    <p>(icone de relógio) 1 hora de duração</p>
-                    <p> (ToDo).</p>
-                </div>
-                <div class="service-card">
-                    <img src="service9.jpg" alt="Serviço 9">
-                    <h3>Higienização Interna</h3>
-                    <p>(icone de relógio) 3 dias de duração</p>
-                    <p> (ToDo).</p>
-                </div>
-            </div>
-        </section>
-        <section id="offer">
-            <div id="offer-cards">
-                <div class="offer-card">
-                    <img src="offer1.jpg" alt="Oferta 1">
-                    <h3>Combo lojista 1</h3>
-                    <p>(icone de relógio) 3 dias de duração</p>
-                    <p>Descrição da oferta 1.</p>
-                </div>
-                <div class="offer-card">
-                    <img src="offer2.jpg" alt="Oferta 2">
-                    <h3>Combo lojista 2</h3>
-                    <p>(icone de relógio) 5 dias de duração</p>
-                    <p>Descrição da oferta 2.</p>
-                </div>
-                <div class="offer-card">
-                    <img src="offer3.jpg" alt="Oferta 3">
-                    <h3>Combo lojista 3</h3>
-                    <p>(icone de relógio) 7 dias de duração</p>
-                    <p>Descrição da oferta 3.</p>
-                </div>
-            </div>
-        </section>
+      <section id="services">
+        <div id="services-cards">
+          <div class="service-card">
+            <img src="service1.jpg" alt="Serviço 1" />
+            <h3>Retoque Fast</h3>
+            <p>(icone de relógio) 3 horas de duração</p>
+            <p>(ToDo).</p>
+          </div>
+          <div class="service-card">
+            <img src="service2.jpg" alt="Serviço 2" />
+            <h3>Retoque Padrão</h3>
+            <p>(icone de relógio) 2 dias de duração</p>
+            <p>(ToDo).</p>
+          </div>
+          <div class="service-card">
+            <img src="service2.jpg" alt="Serviço 2" />
+            <h3>Micropintura</h3>
+            <p>(icone de relógio) 2 horas de duração</p>
+            <p>(ToDo).</p>
+          </div>
+          <div class="service-card">
+            <img src="service3.jpg" alt="Serviço 3" />
+            <h3>Polimento Básico</h3>
+            <p>(icone de relógio) 2 horas de duração</p>
+            <p>(ToDo).</p>
+          </div>
+          <div class="service-card">
+            <img src="service4.jpg" alt="Serviço 4" />
+            <h3>Polimento Intermediário</h3>
+            <p>(icone de relógio) 4 horas de duração</p>
+            <p>(ToDo).</p>
+          </div>
+          <div class="service-card">
+            <img src="service5.jpg" alt="Serviço 5" />
+            <h3>Polimento Detalhado</h3>
+            <p>(icone de relógio) 2 dias de duração</p>
+            <p>(ToDo).</p>
+          </div>
+          <div class="service-card">
+            <img src="service6.jpg" alt="Serviço 6" />
+            <h3>Polimento de Farol</h3>
+            <p>(icone de relógio) 3 dias de duração</p>
+            <p>(ToDo).</p>
+          </div>
+          <div class="service-card">
+            <img src="service7.jpg" alt="Serviço 7" />
+            <h3>Restauração de Farol</h3>
+            <p>(icone de relógio) 1 dia de duração</p>
+            <p>(ToDo).</p>
+          </div>
+          <div class="service-card">
+            <img src="service8.jpg" alt="Serviço 8" />
+            <h3>Limpeza Interna</h3>
+            <p>(icone de relógio) 1 hora de duração</p>
+            <p>(ToDo).</p>
+          </div>
+          <div class="service-card">
+            <img src="service9.jpg" alt="Serviço 9" />
+            <h3>Higienização Interna</h3>
+            <p>(icone de relógio) 3 dias de duração</p>
+            <p>(ToDo).</p>
+          </div>
+        </div>
+      </section>
+      <section id="offer">
+        <div id="offer-cards">
+          <div class="offer-card">
+            <img src="offer1.jpg" alt="Oferta 1" />
+            <h3>Combo lojista 1</h3>
+            <p>(icone de relógio) 3 dias de duração</p>
+            <p>Descrição da oferta 1.</p>
+          </div>
+          <div class="offer-card">
+            <img src="offer2.jpg" alt="Oferta 2" />
+            <h3>Combo lojista 2</h3>
+            <p>(icone de relógio) 5 dias de duração</p>
+            <p>Descrição da oferta 2.</p>
+          </div>
+          <div class="offer-card">
+            <img src="offer3.jpg" alt="Oferta 3" />
+            <h3>Combo lojista 3</h3>
+            <p>(icone de relógio) 7 dias de duração</p>
+            <p>Descrição da oferta 3.</p>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
-        <section>
-            <h4>Entre em Contato!</h4>
-            <p>&copy; 2024 Agenda Connect Car. Todos os direitos reservados.</p>
-            <a href="#">Chamar no WhatsApp</a>
-        </section>
+      <section>
+        <h4>Entre em Contato!</h4>
+        <p>&copy; 2024 Agenda Connect Car. Todos os direitos reservados.</p>
+        <a href="#">Chamar no WhatsApp</a>
+      </section>
     </footer>
-</body>
+  </body>
 </html>
