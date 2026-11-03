@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,7 +21,7 @@
       nomodule
       src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"
     ></script>
-    <title>Agenda Connect Car</title>
+    <title>ConnectCar | Serviços Automotivos</title>
   </head>
   <body>
     <header>
@@ -35,11 +35,29 @@
         </div>
         <div id="profile-info">
           <h1>ConnectCar</h1>
-          <p><ion-icon name="location-outline"></ion-icon> Colatina & Noroeste do
-            Espirito Santo
+          <p>
+            <ion-icon
+              name="location-outline"
+              style="margin-left: -13px"
+            ></ion-icon>
+            Todo Noroeste do Espirito Santo
           </p>
           <button id="profile-status-button">Horário de Funcionamento</button>
         </div>
+        <dialog id="schedule-modal">
+          <div class="modal-header">
+            <h2>Horário de Funcionamento</h2>
+            <button id="close-modal" type="button" aria-label="Fechar">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+          </div>
+
+          <div class="modal-content">
+            <p>Segunda a Sexta <span>07:30 - 18:00</span></p>
+            <p>Sábado <span>08:00 - 12:00</span></p>
+            <p>Domingo <span>Fechado</span></p>
+          </div>
+        </dialog>
       </section>
       <section id="contact-info">
         <div>
@@ -55,7 +73,8 @@
         </div>
         <div id="schedule-button">
           <a href="#" class="schedule">
-            Agendar Horário <ion-icon name="calendar-outline" color="light"></ion-icon>
+            Agendar Horário
+            <ion-icon name="calendar-outline" color="light"></ion-icon>
           </a>
         </div>
       </section>
@@ -156,4 +175,5 @@
       </section>
     </footer>
   </body>
+  <script src="javascript/modal.js" defer></script>
 </html>

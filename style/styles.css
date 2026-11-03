@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: var(--primary-color);
+  color: var(--text-color);
   text-decoration: none;
   flex-wrap: wrap;
   font-size: 0.9rem;
@@ -10,6 +10,7 @@
 :root {
   --primary-color: #1e1e1e;
   --secondary-color: #2c2c2c;
+  --off-button-color: #b4b4b4;
   --accent-color: #b92416;
   --text-color: #ffffff;
   --font-family: "Montserrat", sans-serif;
@@ -18,11 +19,11 @@
 }
 
 body {
+  width: 100vw;
   font-family: var(--font-family);
   font-weight: normal;
   background-color: white;
 }
-
 
 header {
   display: flex;
@@ -30,11 +31,11 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1.5rem;
-
+  background-color: rgb(27, 27, 27);
   padding: 1.5rem 2rem;
   border-bottom: 1px solid #e5e5e5;
+  color: var(--text-color);
 }
-
 
 a {
   color: inherit;
@@ -48,7 +49,6 @@ h1 {
 
 p {
   font-size: 0.9rem;
-  color: var(--secondary-color);
 }
 
 button {
@@ -56,11 +56,9 @@ button {
   border: none;
   border-radius: 8px;
   padding: 8px;
-
   font-family: var(--font-family);
   font-size: 0.9rem;
   font-weight: 600;
-
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -75,14 +73,88 @@ button {
   width: 6rem;
   height: 6rem;
   border-radius: 15px;
-  margin-inline: 1rem;
 }
 
 #profile-info {
   display: flex;
+  margin-left: 1rem;
   flex-direction: column;
   gap: 0.5rem;
   flex: 1;
+}
+
+#profile-status-button {
+  background-color: var(--off-button-color);
+  color: var(--text-color);
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+#schedule-modal {
+  position: fixed;
+  margin: auto;
+  width: min(90%, 400px);
+  padding: 24px;
+  border: none;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 10px 30px #0003;
+}
+
+dialog h2, dialog p, dialog span, dialog ion-icon {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+#schedule-modal::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  font-size: 1.1rem;
+}
+
+#close-modal {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-content p {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 0.85rem;
+}
+
+.modal-content span {
+  font-weight: 600;
+}
+#contact-info {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: space-around;
 }
 .social-icons {
   font-size: 2rem;
@@ -102,5 +174,15 @@ button {
 }
 ion-icon{
     padding-left: 10px;
+}
 
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  
+}
+main p {
+  color: var(--primary-color);
 }
