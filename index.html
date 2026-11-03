@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <!--ICONS-->
+    <!--ICONS SCRIPTS-->
     <script
       type="module"
       src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"
@@ -81,89 +81,202 @@
     </header>
     <main>
       <section id="services">
-        <div id="services-cards">
-          <div class="service-card">
-            <img src="service1.jpg" alt="Serviço 1" />
-            <h3>Retoque Fast</h3>
-            <p>(icone de relógio) 3 horas de duração</p>
-            <p>(ToDo).</p>
+        <div class="services-header">
+          <div>
+            <h2>Nossos Serviços</h2>
+            <p>Escolha o serviço ideal para seu veículo.</p>
           </div>
-          <div class="service-card">
-            <img src="service2.jpg" alt="Serviço 2" />
-            <h3>Retoque Padrão</h3>
-            <p>(icone de relógio) 2 dias de duração</p>
-            <p>(ToDo).</p>
-          </div>
-          <div class="service-card">
-            <img src="service2.jpg" alt="Serviço 2" />
-            <h3>Micropintura</h3>
-            <p>(icone de relógio) 2 horas de duração</p>
-            <p>(ToDo).</p>
-          </div>
-          <div class="service-card">
-            <img src="service3.jpg" alt="Serviço 3" />
-            <h3>Polimento Básico</h3>
-            <p>(icone de relógio) 2 horas de duração</p>
-            <p>(ToDo).</p>
-          </div>
-          <div class="service-card">
-            <img src="service4.jpg" alt="Serviço 4" />
-            <h3>Polimento Intermediário</h3>
-            <p>(icone de relógio) 4 horas de duração</p>
-            <p>(ToDo).</p>
-          </div>
-          <div class="service-card">
-            <img src="service5.jpg" alt="Serviço 5" />
-            <h3>Polimento Detalhado</h3>
-            <p>(icone de relógio) 2 dias de duração</p>
-            <p>(ToDo).</p>
-          </div>
-          <div class="service-card">
-            <img src="service6.jpg" alt="Serviço 6" />
-            <h3>Polimento de Farol</h3>
-            <p>(icone de relógio) 3 dias de duração</p>
-            <p>(ToDo).</p>
-          </div>
-          <div class="service-card">
-            <img src="service7.jpg" alt="Serviço 7" />
-            <h3>Restauração de Farol</h3>
-            <p>(icone de relógio) 1 dia de duração</p>
-            <p>(ToDo).</p>
-          </div>
-          <div class="service-card">
-            <img src="service8.jpg" alt="Serviço 8" />
-            <h3>Limpeza Interna</h3>
-            <p>(icone de relógio) 1 hora de duração</p>
-            <p>(ToDo).</p>
-          </div>
-          <div class="service-card">
-            <img src="service9.jpg" alt="Serviço 9" />
-            <h3>Higienização Interna</h3>
-            <p>(icone de relógio) 3 dias de duração</p>
-            <p>(ToDo).</p>
+
+          <div class="carousel-controls">
+            <button
+              id="prev-service"
+              class="carousel-btn"
+              type="button"
+              aria-label="Serviço anterior"
+            >
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+
+            <button
+              id="next-service"
+              class="carousel-btn"
+              type="button"
+              aria-label="Próximo serviço"
+            >
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
           </div>
         </div>
+
+        <div
+          id="services-cards"
+          tabindex="0"
+          aria-label="Lista de serviços automotivos"
+        >
+          <article class="service-card">
+            <img
+              src="style/assets/img/retoque.png"
+              alt="Serviço de retoque automotivo"
+              loading="lazy"
+            />
+
+            <div class="service-content">
+              <h3>Retoque Fast</h3>
+
+              <p class="service-duration">
+                <ion-icon name="time-outline"></ion-icon>
+                Aproximadamente 3 horas
+              </p>
+
+              <p class="service-description">
+                Reparos rápidos em pequenos danos na pintura.
+              </p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img
+              src="style/assets/img/micro_pintura.png"
+              alt="Serviço de micro pintura automotiva"
+              loading="lazy"
+            />
+
+            <div class="service-content">
+              <h3>Micro Pintura</h3>
+
+              <p class="service-duration">
+                <ion-icon name="time-outline"></ion-icon>
+                Aproximadamente 2 horas
+              </p>
+
+              <p class="service-description">
+                Reparos rápidos em pequenos danos na pintura.
+              </p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img
+              src="style/assets/img/farol.png"
+              alt="Serviço de Restauracao de farois"
+              loading="lazy"
+            />
+
+            <div class="service-content">
+              <h3>Restauração de Fárois</h3>
+              <p class="service-duration">
+                <ion-icon name="time-outline"></ion-icon> Aproximadamente 1
+                horas
+              </p>
+
+              <p class="service-description">
+                Restauração de faróis amarelados,riscados, arranhados fundos, ou
+                opacos, devolvendo a transparência e brilho original.
+              </p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img
+              src="style/assets/img/martelinho.png"
+              alt="Serviço de martelinho de ouro automotivo"
+              loading="lazy"
+            />
+            <div class="service-content">
+              <h3>Martelinho de Ouro</h3>
+              <p class="service-duration">
+                <ion-icon name="time-outline"></ion-icon> Apartir de 1 hora
+              </p>
+              <p class="service-description">
+                Reparos rápidos em amaçados ou pequenos danos referentes ao
+                granizo que não afetaram a pintura.
+              </p>
+            </div>
+          </article>
+        </div>
       </section>
+
       <section id="offer">
+        <div class="offer-header">
+          <h2>Combos Promocionais</h2>
+          <p>Condições especiais para lojistas e empresas.</p>
+        </div>
+
         <div id="offer-cards">
-          <div class="offer-card">
-            <img src="offer1.jpg" alt="Oferta 1" />
-            <h3>Combo lojista 1</h3>
-            <p>(icone de relógio) 3 dias de duração</p>
-            <p>Descrição da oferta 1.</p>
-          </div>
-          <div class="offer-card">
-            <img src="offer2.jpg" alt="Oferta 2" />
-            <h3>Combo lojista 2</h3>
-            <p>(icone de relógio) 5 dias de duração</p>
-            <p>Descrição da oferta 2.</p>
-          </div>
-          <div class="offer-card">
-            <img src="offer3.jpg" alt="Oferta 3" />
-            <h3>Combo lojista 3</h3>
-            <p>(icone de relógio) 7 dias de duração</p>
-            <p>Descrição da oferta 3.</p>
-          </div>
+          <article class="offer-card">
+            <img
+              src="style/assets/offer1.webp"
+              alt="Veículo preparado para venda"
+              loading="lazy"
+            />
+
+            <div class="offer-content">
+              <h3>Combo Lojista 1</h3>
+
+              <p class="offer-duration">
+                <ion-icon name="time-outline"></ion-icon>
+                Prazo estimado: 3 dias
+              </p>
+
+              <p class="offer-description">
+                Preparação estética para valorização de veículos em estoque.
+              </p>
+
+              <button class="offer-button" type="button">
+                Solicitar orçamento
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </button>
+            </div>
+          </article>
+
+          <article class="offer-card">
+            <img
+              src="style/assets/offer2.webp"
+              alt="Serviço de estética automotiva"
+              loading="lazy"
+            />
+
+            <div class="offer-content">
+              <h3>Combo Lojista 2</h3>
+
+              <p class="offer-duration">
+                <ion-icon name="time-outline"></ion-icon>
+                Prazo estimado: 5 dias
+              </p>
+
+              <p class="offer-description">
+                Serviços combinados de recuperação e estética automotiva.
+              </p>
+
+              <button class="offer-button" type="button">
+                Solicitar orçamento
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </button>
+            </div>
+          </article>
+
+          <article class="offer-card">
+            <img
+              src="style/assets/offer3.webp"
+              alt="Veículo após detalhamento"
+              loading="lazy"
+            />
+
+            <div class="offer-content">
+              <h3>Combo Lojista 3</h3>
+
+              <p class="offer-duration">
+                <ion-icon name="time-outline"></ion-icon>
+                Prazo estimado: 7 dias
+              </p>
+
+              <p class="offer-description">
+                Preparação estética completa para apresentação comercial.
+              </p>
+
+              <button class="offer-button" type="button">
+                Solicitar orçamento
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </button>
+            </div>
+          </article>
         </div>
       </section>
     </main>
@@ -176,4 +289,5 @@
     </footer>
   </body>
   <script src="javascript/modal.js" defer></script>
+  <script src="javascript/carousel.js" defer></script>
 </html>
