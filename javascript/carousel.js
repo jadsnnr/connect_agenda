@@ -45,3 +45,34 @@ carousel.addEventListener("scroll", updateButtons);
 window.addEventListener("resize", updateButtons);
 
 updateButtons();
+
+
+const whatsappNumber = "5527999344500";
+
+const serviceCards = document.querySelectorAll(
+  "#services-cards .service-card"
+);
+
+serviceCards.forEach((card) => {
+  const serviceName = card
+    .querySelector("h3")
+    .textContent.trim();
+
+  const serviceButton = card.querySelector(
+    ".service-button"
+  );
+
+  if (!serviceButton) return;
+
+  const message =
+    `Olá! Vim pelo site da ConnectCar e ` +
+    `gostaria de solicitar um orçamento para ` +
+    `o serviço de ${serviceName}.`;
+
+  const whatsappLink =
+    `https://wa.me/${whatsappNumber}?text=` +
+    encodeURIComponent(message);
+
+  serviceButton.href = whatsappLink;
+});
+
