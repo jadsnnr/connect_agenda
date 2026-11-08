@@ -1,467 +1,486 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  flex-wrap: wrap;
-  font-size: 0.9rem;
-}
-:root {
-  --primary-color: #1e1e1e;
-  --secondary-color: #2c2c2c;
-  --off-button-color: #b4b4b4;
-  --accent-color: #b92416;
-  --text-color: #ffffff;
-  --font-family: "Montserrat", sans-serif;
-  --status-off-color: #b92416;
-  --status-on-color: #3aac43;
-}
-
-body {
-  width: 100vw;
-  font-family: var(--font-family);
-  font-weight: normal;
-  background-color: white;
-}
-
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  background-color: rgb(12, 12, 12);
-  padding: 1.5rem 2rem;
-  border-bottom: 1px solid #e5e5e5;
-  color: var(--text-color);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-p {
-  font-size: 0.9rem;
-}
-
-button {
-  color: var(--text-color);
-  border: none;
-  border-radius: 8px;
-  padding: 8px;
-  font-family: var(--font-family);
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.main-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary-color);
-}
-
-#profile {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-}
-
-#profile-img {
-  width: 6rem;
-  height: 6rem;
-  border-radius: 15px;
-}
-
-#profile-info {
-  display: flex;
-  margin-left: 1rem;
-  flex-direction: column;
-  gap: 0.5rem;
-  flex: 1;
-}
-
-#profile-status-button {
-  background-color: var(--off-button-color);
-  color: var(--text-color);
-  width: 100%;
-  padding: 8px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-}
-#schedule-modal {
-  position: fixed;
-  margin: auto;
-  width: min(90%, 400px);
-  padding: 24px;
-  border: none;
-  border-radius: 12px;
-  background: white;
-  box-shadow: 0 10px 30px #0003;
-}
-
-dialog h2, dialog p, dialog span, dialog ion-icon {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: var(--primary-color);
-}
-
-#schedule-modal::backdrop {
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 20px;
-}
-
-.modal-header h2 {
-  font-size: 1.1rem;
-}
-
-#close-modal {
-  background: transparent;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-.modal-content {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.modal-content p {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
-  font-size: 0.85rem;
-}
-
-.modal-content span {
-  font-weight: 600;
-}
-#contact-info {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  margin-top: 1rem;
-  justify-content: space-around;
-}
-.social-icons {
-  font-size: 2rem;
-}
-#schedule-button{
-    padding-top: 4px;
-}
-.schedule {
-    padding: 5px 10px;
-    border-radius: 15px;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  background-color: var(--status-on-color);
-  color: var(--text-color);
-
-}
-ion-icon{
-    padding-left: 10px;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
-  
-}
-main p {
-  color: var(--primary-color);
-}
-
-
-/* SEÇÃO DE SERVIÇOS */
-#services {
-  width: 100%;
-  min-width: 0;
-  padding: 2rem 1rem;
-}
-
-.carousel-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 1rem 0;
-}
-
-/* CONTAINER DO CARROSSEL */
-#services-cards {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 1rem;
-
-  width: 100%;
-  min-width: 0;
-
-  overflow-x: auto;
-  overflow-y: hidden;
-
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-}
-
-#services-cards::-webkit-scrollbar {
-  display: none;
-}
-
-/* CARDS */
-.service-card {
-  flex: 0 0 82%;
-  min-width: 0;
-
-  scroll-snap-align: start;
-
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  overflow: hidden;
-
-  background-color: #fff;
-}
-
-/* IMAGENS */
-.service-card img {
-  display: block;
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-/* CONTEÚDO */
-.service-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  padding: 1rem;
-}
-
-.service-content h3 {
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.service-description {
-  font-size: 0.85rem;
-  line-height: 1.5;
-}
-
-.bridge-section{
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1rem 1rem;
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-  margin-left: 0;
-}
-.bridge-section p {
-  font-size: 0.9rem;
-  line-height: 1.2;
-  color: var(--text-color);
-}
-
-
-/* COMBOS */
-
-#offer {
-  width: 100%;
-  min-width: 0;
-  padding: 2.5rem 1rem;
-  background-color: #f5f5f5;
-  border-radius: 12px;
-}
-
-/* CABEÇALHO */
-
-.offer-header {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1.8rem;
-}
-
-.offer-header h2 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--primary-color);
-}
-
-.offer-header p {
-  font-size: 0.85rem;
-  line-height: 1.5;
-  color: #666;
-}
-
-/* CONTAINER DOS CARDS */
-
-#offer-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  width: 100%;
-}
-
-/* CARD PADRÃO */
-
-.offer-card {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-width: 0;
-
-  background-color: #fff;
-  border: 1px solid #e5e5e5;
-  border-radius: 14px;
-  overflow: hidden;
-
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-/* IMAGENS DOS COMBOS */
-
-.offer-card img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* CONTEÚDO */
-
-.offer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0.8rem;
-  padding: 1.2rem;
-}
-
-.offer-content h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--primary-color);
-}
-
-.offer-duration {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  font-size: 0.8rem;
-  color: #777;
-}
-
-.offer-duration ion-icon {
-  flex-shrink: 0;
-  font-size: 1rem;
-  color: var(--accent-color);
-}
-
-.offer-description {
-  font-size: 0.85rem;
-  line-height: 1.6;
-  color: #555;
-}
-
-/* BOTÃO DE ORÇAMENTO */
-
-.offer-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-
-  width: 100%;
-  min-height: 46px;
-  margin-top: 0.5rem;
-  padding: 0.85rem 1rem;
-
-  background-color: var(--accent-color);
-  color: #fff;
-
-  border: none;
-  border-radius: 8px;
-
-  font-family: var(--font-family);
-  font-size: 0.85rem;
-  font-weight: 600;
-
-  cursor: pointer;
-  transition:
-    background-color 0.25s ease,
-    transform 0.25s ease;
-}
-
-.offer-button ion-icon {
-  color: inherit;
-  font-size: 1.1rem;
-}
-
-.offer-button:active {
-  transform: scale(0.98);
-}
-
-.offer-button:focus-visible {
-  outline: 3px solid var(--accent-color);
-  outline-offset: 3px;
-}
-
-/* COMBO 2 - MELHOR ESCOLHA */
-
-.offer-card:nth-child(2) {
-  border: 2px solid var(--accent-color);
-  box-shadow: 0 6px 22px rgba(185, 36, 22, 0.15);
-}
-
-.offer-card:nth-child(2) .offer-button {
-  background-color: #1e1e1e;
-}
-
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  padding: 2rem 1rem;
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-}
-.footer-whatsapp-button {
-  color: #25d366;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-}
-@media (prefers-reduced-motion: reduce) {
-  .offer-card,
-  .offer-button {
-    transition: none;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
   }
-}
+  :root {
+    --primary-color: #1e1e1e;
+    --secondary-color: #2c2c2c;
+    --off-button-color: #b4b4b4;
+    --accent-color: #b92416;
+    --text-color: #ffffff;
+    --font-family: "Montserrat", sans-serif;
+    --status-off-color: #b92416;
+    --status-on-color: #3aac43;
+  }
+
+  body {
+    width: 100vw;
+    font-family: var(--font-family);
+    font-weight: normal;
+    background-color: white;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    background-color: rgb(12, 12, 12);
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #e5e5e5;
+    color: var(--text-color);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  button {
+    color: var(--text-color);
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    font-family: var(--font-family);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .carousel-btn{
+    background-color: var(--off-button-color);
+    color: var(--text-color);
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition:
+      background-color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .carousel-btn:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+  }
+
+  .main-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+
+  #profile {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  #profile-img {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 15px;
+  }
+
+  #profile-info {
+    display: flex;
+    margin-left: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  #profile-status-button {
+    background-color: var(--off-button-color);
+    color: var(--text-color);
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
+  #schedule-modal {
+    position: fixed;
+    margin: auto;
+    width: min(90%, 400px);
+    padding: 24px;
+    border: none;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 10px 30px #0003;
+  }
+
+  dialog h2, dialog p, dialog span, dialog ion-icon {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+  }
+
+  #schedule-modal::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .modal-header h2 {
+    font-size: 1.1rem;
+  }
+
+  #close-modal {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .modal-content p {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.85rem;
+  }
+
+  .modal-content span {
+    font-weight: 600;
+  }
+  #contact-info {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: space-around;
+  }
+  .social-icons {
+    font-size: 2rem;
+  }
+  #schedule-button{
+      padding-top: 4px;
+  }
+  .schedule {
+      padding: 5px 10px;
+      border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: var(--status-on-color);
+    color: var(--text-color);
+
+  }
+  ion-icon{
+      padding-left: 10px;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    
+  }
+  main p {
+    color: var(--primary-color);
+  }
+
+
+  /* SEÇÃO DE SERVIÇOS */
+  #services {
+    width: 100%;
+    min-width: 0;
+    padding: 2rem 1rem;
+  }
+
+  .carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+  }
+
+  /* CONTAINER DO CARROSSEL */
+  #services-cards {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+
+    width: 100%;
+    min-width: 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+
+  #services-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* CARDS */
+  .service-card {
+    flex: 0 0 82%;
+    min-width: 0;
+
+    scroll-snap-align: start;
+
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+
+    background-color: #fff;
+  }
+
+  /* IMAGENS */
+  .service-card img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  /* CONTEÚDO */
+  .service-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .service-content h3 {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .service-description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .bridge-section{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 1rem;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    margin-left: 0;
+  }
+  .bridge-section p {
+    font-size: 0.9rem;
+    line-height: 1.2;
+    color: var(--text-color);
+  }
+
+  /* COMBOS */
+
+  #offer {
+    width: 100%;
+    min-width: 0;
+    padding: 2.5rem 1rem;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+  }
+
+  /* CABEÇALHO */
+
+  .offer-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .offer-header h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+
+  .offer-header p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #666;
+  }
+
+  /* CONTAINER DOS CARDS */
+
+  #offer-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  /* CARD PADRÃO */
+
+  .offer-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 14px;
+    overflow: hidden;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  /* IMAGENS DOS COMBOS */
+
+  .offer-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* CONTEÚDO */
+
+  .offer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+    padding: 1.2rem;
+  }
+
+  .offer-content h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+
+  .offer-duration {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    font-size: 0.8rem;
+    color: #777;
+  }
+
+  .offer-duration ion-icon {
+    flex-shrink: 0;
+    font-size: 1rem;
+    color: var(--accent-color);
+  }
+
+  .offer-description {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  /* BOTÃO DE ORÇAMENTO */
+
+  .offer-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+
+    width: 100%;
+    min-height: 46px;
+    margin-top: 0.5rem;
+    padding: 0.85rem 1rem;
+
+    background-color: var(--accent-color);
+    color: #fff;
+
+    border: none;
+    border-radius: 8px;
+
+    font-family: var(--font-family);
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition:
+      background-color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .offer-button ion-icon {
+    color: inherit;
+    font-size: 1.1rem;
+  }
+
+  .offer-button:active {
+    transform: scale(0.98);
+  }
+
+  .offer-button:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+  }
+
+  /* COMBO 2 - MELHOR ESCOLHA */
+
+  .offer-card:nth-child(2) {
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 6px 22px rgba(185, 36, 22, 0.15);
+  }
+
+  .offer-card:nth-child(2) .offer-button {
+    background-color: #1e1e1e;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+  }
+  .footer-whatsapp-button {
+    color: #25d366;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .offer-card,
+    .offer-button {
+      transition: none;
+    }
+  }
